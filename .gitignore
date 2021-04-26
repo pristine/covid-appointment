@@ -1,0 +1,14 @@
+/dist
+/logs
+/npm-debug.log
+/node_modules
+.DS_Store
+
+src/.env
+.idea
+.env
+build
+dist
+junit.xml
+
+.webpack

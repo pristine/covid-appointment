@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "signal": "SIGTERM",
+  "ignore": ["*.spec.js", "node_modules"],
+  "delay": 900,
+  "watch": ["src"],
+  "ext": "js,json,ts,tsx",
+  "execMap": {
+    "js": "babel-node",
+    "ts": "babel-node"
+  }
+}
