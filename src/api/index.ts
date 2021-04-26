@@ -1,4 +1,9 @@
-export const handler = async (req, res) => {
-  console.log(req);
-  return res.status(200).json({ status: 'hello world' });
-};
+import express from 'express'
+
+import location from './location'
+
+const api = express.Router()
+
+api.use('/location', location);
+
+export default api;
