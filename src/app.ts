@@ -8,8 +8,12 @@ import { handler } from './api';
 
 const app = express();
 
-app.use(helmet());
-app.set('trust proxy', 1);
+app.use(helmet()); // security
+
+app.use(express.static('assets')) // serve our static files like JS and CSS
+
+app.set('trust proxy', 1); // ip related stuff
+app.set('view engine', 'ejs'); // ejs for our templates
 
 app.use(
   bodyParser.json({
