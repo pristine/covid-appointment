@@ -13,6 +13,5 @@ dotenvSafe.config({
 });
 
 export const config = {
-  collectorUri: process.env.collectorUri,
   PORT: process.env.PORT,
 };
