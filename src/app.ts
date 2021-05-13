@@ -29,4 +29,8 @@ app.use(
 
 app.use('/api', api);
 
+app.get("/", ( _, res ) => {
+    res.sendFile(__dirname + "/views/index.html")
+})
+
 export default app;

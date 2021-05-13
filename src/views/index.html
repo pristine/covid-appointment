@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Vaccines near you</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .card {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      line-height: 1.4;
+    }
+    #sidebar {
+      background-color: #f4f4f4;
+      color: #333;
+
+    }
+    .text-center {
+      display: block;
+      text-align: center;
+    }
+  </style>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+</head>
+<body>
+
+<!-- Header-->
+  <header id="header" class="card"> 
+    <h1>Vaccines Near You</h1>
+</header>
+
+<!--Zipcode-->
+<div>
+  <label for="Zipcode">Zipcode</label>
+  <input type="number" name="zipcode" id="Zipcode">
+</div>
+
+<!-- Vaccine Selector -->
+<div>
+  <label for="Vaccine">Vaccine:</label>
+  <select name="select" id="Vaccine">
+    <option value="Select">Choose your Vaccine</option>
+    <option value="5 Miles">Pfizer</option>
+    <option value="10 Miles">Moderna</option>
+    <option value="25 Miles">Johnson & Johnson</option>
+  </select>
+  </div>
+
+<!--Select-->
+<div>
+<label for="Radius">Radius:</label>
+<select name="select" id="Radius">
+  <option value="Select">Select your distance</option>
+  <option value="5 Miles">5 Miles</option>
+  <option value="10 Miles">10 Miles</option>
+  <option value="25 Miles">25 Miles</option>
+  <option value="50 Miles">50 Miles</option>
+</select>
+</div>
+
+<!-- Submit -->
+<input type="Submit" value="Let's Check!">
+
+<!-- FMI -->
+<aside id="sidebar" class="card">
+  <h2>For more information, please visit</h2>
+  <ul>
+    <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/safety/safety-of-vaccines.html">CDC's safety concerns</a></li>
+  </ul>
+
+</aside>
+
+
+</body>
+</html>
