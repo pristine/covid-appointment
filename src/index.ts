@@ -5,7 +5,6 @@ import http from 'http';
 import throng from 'throng';
 
 import app from './app';
-import { config } from './config';
 
 const WORKERS = process.env.WEB_CONCURRENCY || 1;
 
@@ -21,8 +20,8 @@ const start = async () => {
 
   const server = http.createServer(app);
 
-  server.listen(config.PORT || 8080, () => {
-    console.info(`Started on port ${config.PORT || 8080}`);
+  server.listen(process.env.PORT || 8080, () => {
+    console.info(`Started on port ${process.env.PORT || 8080}`);
 
     app.on('shutdown', () => process.exit(0));
   });
