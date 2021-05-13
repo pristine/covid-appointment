@@ -14,13 +14,13 @@ const zipToLatLong = async( zip ) => {
         body: JSON.stringify(body)
     })
 
-    const body = await response.json();
+    const responseBody = await response.json();
 
-    if (!body.data) return null;
+    if (!responseBody.data) return null;
 
     return {
-        latitude: body.data.latitude,
-        longitude: body.data.longitude
+        latitude: responseBody.data.latitude,
+        longitude: responseBody.data.longitude
     }
 }
 
