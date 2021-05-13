@@ -3,7 +3,7 @@ import zipcodes from 'zipcodes'
 
 const location = express.Router()
 
-location.post('/zip_lookup', async (req, res) => {
+location.post('/zip_to_lat_long', async (req, res) => {
     try {
         const zip = req.body.zip;
 
