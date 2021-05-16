@@ -18,7 +18,7 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
     }
 
     const endpoint = `${apiUrl}?${Object.keys(queryParameters)
-        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(queryParameters[k]))
         .join('&')}`
 
     const response = await fetch(endpoint, {
