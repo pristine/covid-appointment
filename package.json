@@ -30,7 +30,7 @@
     "babel-loader": "^8.0.5",
     "body-parser": "^1.13.3",
     "btoa": "^1.2.1",
-    "cors": "^2.7.1",
+    "cors": "^2.8.5",
     "cross-env": "7.0.0",
     "dotenv-safe": "8.2.0",
     "eslint": "6.7.2",

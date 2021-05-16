@@ -3,12 +3,14 @@ import '@babel/polyfill';
 import express from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
+import cors from 'cors'
 
 import api from './api';
 
 const app = express();
 
 app.use(helmet()); // security
+app.use(cors());
 
 app.use('/assets', express.static(__dirname  + '/assets')) // serve our static files like JS and CSS
 
