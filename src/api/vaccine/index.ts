@@ -15,6 +15,7 @@ vaccine.post('/search', async(req, res) => {
     try {
         const response = await axios({
             url,
+            method: 'GET',
             headers: {
                 "accept": "application/json",
                 "content-type": "application/json",
@@ -22,9 +23,9 @@ vaccine.post('/search', async(req, res) => {
             }
         });
 
-        res.status(200).send(
+        res.status(200).send({
             ...response.data
-        )
+        })
     } catch(e) {
         res.status(400).send({
             error: true
