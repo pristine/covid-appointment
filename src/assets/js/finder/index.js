@@ -75,12 +75,12 @@ const zipToLatLong = async( zip ) => {
 window.onload = function(){ 
     document.getElementById("submitButton").onclick = async () =>{
         const radiusElement = document.getElementById("Radius");
-        const radius = radiusElement.options[radiusElement.selectedIndex].text;
+        const radius = radiusElement.options[radiusElement.selectedIndex].text.split(" ")[0];
     
         const vaccineElement = document.getElementById("Vaccine");
         const vaccine = vaccineElement.options[vaccineElement.selectedIndex].text;
     
-        const zipCode = document.getElementById("Zipcode").textContent;
+        const zipCode = document.getElementById("Zipcode").value;
     
         console.log(radius)
         console.log(vaccine)
