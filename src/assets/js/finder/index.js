@@ -47,4 +47,45 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
     })
 }
 
-console.log("asdasd")
+const zipToLatLong = async( zip ) => {
+    const body = {
+        zip
+    }
+
+    const response = await fetch(`/api/location/zip_to_lat_long`, {
+        method: "POST",
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+          },
+        body: JSON.stringify(body)
+    })
+
+    const responseBody = await response.json();
+
+    if (!responseBody.data) return null;
+
+    return {
+        latitude: responseBody.data.latitude,
+        longitude: responseBody.data.longitude
+    }
+}
+
+document.getElementById("submitButton").onclick = async () =>{
+    const radiusElement = document.getElementById("Radius");
+    const radius = radiusElement.options[radiusElement.selectedIndex].text;
+
+    const vaccineElement = document.getElementById("Vaccine");
+    const vaccine = vaccineElement.options[vaccineElement.selectedIndex].text;
+
+    const zipCode = document.getElementById("Zipcode").textContent;
+
+    console.log(radius)
+    console.log(vaccine)
+    console.log(zipCode)
+
+    const latLong = await zipToLatLong(zipCode)
+
+    console.log(latLong)
+};
