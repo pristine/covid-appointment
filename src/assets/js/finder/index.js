@@ -10,25 +10,22 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
     
     const vaccineType = vaccines[vaccine.toLowerCase()]
 
-    const queryParameters = {
+    const requestBody = {
         medicationGuids: vaccineType,
         lat,
         long,
         radius
     }
 
-    const endpoint = `${apiUrl}?${Object.keys(queryParameters)
-        .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(queryParameters[k]))
-        .join('&')}`
-
-    const response = await fetch(endpoint, {
-        method: "GET",
+    const response = await fetch('/api/vaccine/search', {
+        method: "POST",
         mode: 'cors',
         headers: {
             "accept": "application/json",
-            "origin": "https://api.us.castlighthealth.com/",
+            "content-type": "application/json",
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
-        }
+        },
+        body: JSON.stringify(requestBody)
     });
 
     const body = await response.json();
@@ -36,7 +33,6 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
     if (!body.providers) return null;
 
     return body.providers.filter( provider => provider.in_stock ).map( provider => {
-
         return {
             name: provider.name,
             address1: provider.address1,
