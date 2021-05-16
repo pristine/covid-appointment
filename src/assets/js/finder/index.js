@@ -78,16 +78,17 @@ window.onload = function(){
         const radius = radiusElement.options[radiusElement.selectedIndex].text.split(" ")[0];
     
         const vaccineElement = document.getElementById("Vaccine");
+
         const vaccine = vaccineElement.options[vaccineElement.selectedIndex].text;
     
         const zipCode = document.getElementById("Zipcode").value;
     
-        console.log(radius)
-        console.log(vaccine)
-        console.log(zipCode)
-    
         const latLong = await zipToLatLong(zipCode)
     
-        console.log(latLong)
+        if (!latLong.latitude || !latLong.longitude) return;
+
+        const locations = await findVaccineLocations(vaccine, latLong.latitude, latLong.longitude, radius);
+
+        console.log(locations)
     };
 };
