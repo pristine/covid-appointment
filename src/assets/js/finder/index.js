@@ -70,8 +70,8 @@ const zipToLatLong = async( zip ) => {
     }
 }
 
-window.onload = function(){ 
-    document.getElementById("submitButton").onclick = async () =>{
+window.onload = () => { 
+    document.getElementById("submitButton").onclick = async () => {
         const radiusElement = document.getElementById("Radius");
         const radius = radiusElement.options[radiusElement.selectedIndex].text.split(" ")[0];
     
