@@ -72,20 +72,22 @@ const zipToLatLong = async( zip ) => {
     }
 }
 
-document.getElementById("submitButton").onclick = async () =>{
-    const radiusElement = document.getElementById("Radius");
-    const radius = radiusElement.options[radiusElement.selectedIndex].text;
-
-    const vaccineElement = document.getElementById("Vaccine");
-    const vaccine = vaccineElement.options[vaccineElement.selectedIndex].text;
-
-    const zipCode = document.getElementById("Zipcode").textContent;
-
-    console.log(radius)
-    console.log(vaccine)
-    console.log(zipCode)
-
-    const latLong = await zipToLatLong(zipCode)
-
-    console.log(latLong)
+window.onload = function(){ 
+    document.getElementById("submitButton").onclick = async () =>{
+        const radiusElement = document.getElementById("Radius");
+        const radius = radiusElement.options[radiusElement.selectedIndex].text;
+    
+        const vaccineElement = document.getElementById("Vaccine");
+        const vaccine = vaccineElement.options[vaccineElement.selectedIndex].text;
+    
+        const zipCode = document.getElementById("Zipcode").textContent;
+    
+        console.log(radius)
+        console.log(vaccine)
+        console.log(zipCode)
+    
+        const latLong = await zipToLatLong(zipCode)
+    
+        console.log(latLong)
+    };
 };
