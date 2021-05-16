@@ -4,83 +4,129 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Vaccines near you</title>
+  <link>
+  <link rel="stylesheet" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+      margin: 0%;
+      padding: 0%;
     }
-    .card {
-      background-color: #333;
-      color: white;
-      padding: 10px;
 
-    }
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #333;
-      line-height: 1.4;
+      background-color: #344a72;
+      font-family: 'Quicksand', sans-serif;  
+      color: white;
+      line-height: 1.8;
     }
-    #sidebar {
-      background-color: #f4f4f4;
-      color: #333;
 
+    a {
+      text-decoration: none;
     }
-    .text-center {
-      display: block;
+
+    #container {
+      padding: 20px;
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    .form-wrap {
+      background: white;
+      padding: 15px 25px;
+      color: #333;
+    }
+
+    .form-wrap h1,
+    .form-wrap p {
       text-align: center;
     }
+
+    .form-wrap .form-group {
+      margin-top: 15px;
+    }
+
+    .form-wrap .form-group label {
+      display: block;
+      color: #666;
+    }
+
+    .form-wrap .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: #ddd 1px solid;
+      border-radius: 5px;
+    }
+
+    .form-wrap .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: #ddd 1px solid;
+      border-radius: 5px;
+    }
+
+    .form-wrap button {
+      display: block;
+      background-color: #49c1a2;
+      width: 100%;
+      color: white;
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-wrap button:hover {
+      background-color: #37a08e;
+    }
+
+    .bottom-text a {
+      color: #344a72;
+    }
+
   </style>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   <script src='main.js'></script>
 </head>
 <body>
-
-<!-- Header-->
-  <header id="header" class="card"> 
+  <script src="./assets/js/finder/index.js"></script>
+<div id="container">
+  <div class="form-wrap">
     <h1>Vaccines Near You</h1>
-</header>
-
-<!--Zipcode-->
-<div>
-  <label for="Zipcode">Zipcode</label>
-  <input type="number" name="zipcode" id="Zipcode">
-</div>
-
-<!-- Vaccine Selector -->
-<div>
-  <label for="Vaccine">Vaccine:</label>
-  <select name="select" id="Vaccine">
-    <option value="Select">Choose your Vaccine</option>
-    <option value="5 Miles">Pfizer</option>
-    <option value="10 Miles">Moderna</option>
-    <option value="25 Miles">Johnson & Johnson</option>
-  </select>
+    <p><strong>Fast, Free, only takes 30 seconds.</strong></p>
+    <form>
+      <div class="form-group">
+        <label for="Zipcode"><strong>Zipcode</strong></label>
+        <input type="number" name="zipcode" id="Zipcode">
+      </div>
+      <div class="form-group">
+        <label for="Vaccine"><strong>Vaccine</strong></label>
+        <select name="select" id="Vaccine">
+          <option value="Select"><strong>Choose your Vaccine</strong></option>
+          <option value="5 Miles"><strong>Pfizer</strong></option>
+          <option value="10 Miles"><strong>Moderna</strong></option>
+          <option value="25 Miles"><strong>Johnson & Johnson</strong></option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Radius">Radius</label>
+        <select name="select" id="Radius">
+          <option value="Select"><strong>Select your distance</strong></option>
+          <option value="5 Miles"><strong>5 Miles</strong></option>
+          <option value="10 Miles"><strong>10 Miles</strong></option>
+          <option value="25 Miles"><strong>25 Miles</strong></option>
+          <option value="50 Miles"><strong>50 Miles</strong></option>
+        </select>
+      </div>
+      <button type="submit" class="form-group-button">Let's Check!</button>
+      <p class="buttom-text">
+        <strong>Here's more information about the Vaccines you will take!</strong>
+        <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/safety/safety-of-vaccines.html"><strong>CDC's safety concerns</strong></a>
+      </p>
+    </form>
   </div>
-
-<!--Select-->
-<div>
-<label for="Radius">Radius:</label>
-<select name="select" id="Radius">
-  <option value="Select">Select your distance</option>
-  <option value="5 Miles">5 Miles</option>
-  <option value="10 Miles">10 Miles</option>
-  <option value="25 Miles">25 Miles</option>
-  <option value="50 Miles">50 Miles</option>
-</select>
 </div>
-
-<!-- Submit -->
-<input type="Submit" value="Let's Check!">
-
-<!-- FMI -->
-<aside id="sidebar" class="card">
-  <h2>For more information, please visit</h2>
-  <ul>
-    <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/safety/safety-of-vaccines.html">CDC's safety concerns</a></li>
-  </ul>
-
-</aside>
-
-
 </body>
 </html>

@@ -47,6 +47,4 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
     })
 }
 
-module.exports = {
-    findVaccineLocations
-}
+console.log("asdasd")
