@@ -2,7 +2,7 @@
   "name": "covid-appointment",
   "description": "boilerplate for developing APIs",
   "version": "1.0.0",
-  "author": "EdwinJ0124",
+  "author": "",
   "dependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
