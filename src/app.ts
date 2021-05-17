@@ -3,14 +3,13 @@ import '@babel/polyfill';
 import express from 'express';
 import helmet from 'helmet';
 import bodyParser from 'body-parser';
-import cors from 'cors'
+import anywhere from "express-cors-anywhere";
 
 import api from './api';
 
 const app = express();
 
 app.use(helmet()); // security
-app.use(cors());
 
 app.use('/assets', express.static(__dirname  + '/assets')) // serve our static files like JS and CSS
 
@@ -30,6 +29,8 @@ app.use(
 );
 
 app.use('/api', api);
+
+app.use('/cors_anywhere', anywhere())
 
 app.get("/", ( _, res ) => {
     res.sendFile(__dirname + "/views/index.html")

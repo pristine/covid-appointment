@@ -25,9 +25,9 @@
       text-decoration: none;
     }
 
-    #container {
+    .container {
       padding: 20px;
-      max-width: 400px;
+      max-width: 600px;
       margin: 30px auto;
     }
 
@@ -85,12 +85,33 @@
       color: #344a72;
     }
 
+    /* Dashed border */
+    hr.dashed {
+      border-top: 3px dashed #bbb;
+    }
+
+    /* Dotted border */
+    hr.dotted {
+      border-top: 3px dotted #bbb;
+    }
+
+    /* Solid border */
+    hr.solid {
+      border-top: 3px solid #bbb;
+    }
+
+    /* Rounded border */
+    hr.rounded {
+      border-top: 8px solid #bbb;
+      border-radius: 5px;
+    }
+
   </style>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
   <script src="/assets/js/finder/index.js"></script>
-<div id="container">
+<div id="container" class="container">
   <div class="form-wrap">
     <h1>Vaccines Near You</h1>
     <p><strong>Fast, Free, only takes 30 seconds.</strong></p>
