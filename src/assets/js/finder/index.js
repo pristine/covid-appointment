@@ -8,6 +8,8 @@ const vaccines = {
 
 const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
 
+    if (!vaccine || !lat || !long || !radius) return null;
+
     try {
         const vaccineType = vaccines[vaccine.toLowerCase()]
 
@@ -57,6 +59,9 @@ const findVaccineLocations = async ( vaccine, lat, long, radius ) => {
 }
 
 const zipToLatLong = async( zip ) => {
+
+    if (!zip) return null;
+
     try {
         const body = {
             zip
